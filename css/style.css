@@ -12,6 +12,7 @@ body {
 
 .hide {
   display: none !important;
+  transition: display 2s linear 0s;
 }
 
 /* ============ BG COLORS ============ */
