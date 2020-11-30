@@ -8,7 +8,6 @@
     <title>Общая информация о Байкале</title>
     <!-- Scripts -->
     <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="js/nav-test.js"></script>
     <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="js/lightbox.js"></script>
     <!-- Sytyles -->
@@ -31,41 +30,41 @@
   </div>
   <div class="content d-flex flex-row">
     <div class="menu level-1 sidebar">
-      <ul class="nav">
-        <li id="1" class="itemLevel1 active" onclick="navLevel1()"><p>Общая информация</p><span>></span></li>
-        <li id="2" class="itemLevel1" onclick="navLevel1()"><p>Фауна Байкала</p><span>></span></li>
-        <li id="3" class="itemLevel1" onclick="navLevel1()"><p>Биота Байкала</p><span>></span></li>
-        <li id="4" class="itemLevel1" onclick="navLevel1()"><p>Дно Байкала</p><span>></span></li>
-        <li id="5" class="itemLevel1" onclick="navLevel1()"><p>История Байкала</p><span>></span></li>
-      </ul>
+      <nav class="nav show level-1">
+        <li id="1" class="itemLevel1 active" ><p>Общая информация</p></li>
+        <li id="2" class="itemLevel1" ><p>Фауна Байкала</p></li>
+        <li id="3" class="itemLevel1" ><p>Биота Байкала</p></li>
+        <li id="4" class="itemLevel1" ><p>Дно Байкала</p></li>
+        <li id="5" class="itemLevel1" ><p>История Байкала</p></li>
+	  </nav>
     </div>
     <div class="menu level-2 sidebar">
-      <ul class="menulevel2 nav" id="submenu1">
-        <li id="1-1" class="menuItemL2 active" onclick="navLevel2()"><p>Общая информация о Байкале</p><span>></span></li>
-        <li id="1-2" class="menuItemL2" onclick="navLevel2()"><p>Расположение Байкала</p><span>></span></li>
-        <li id="1-3" class="menuItemL2" onclick="navLevel2()"><p>Особенности Байкала</p><span>></span></li>
-        <li id="1-4" class="menuItemL2" onclick="navLevel2()"><p>Уникальность вод Байкала</p><span>></span></li>
-        <li id="1-5" class="menuItemL2" onclick="navLevel2()"><p>Возраст Байкала</p><span>></span></li>
-      </ul>
-      <ul class="menulevel2 nav hide" id="submenu2">
-        <li id="2-1" class="menuItemL2" onclick="navLevel2()"><p>Разнообразие фауны, эндемики и виды-вселенцы</p><span>></span></li>
-        <li id="2-2" class="menuItemL2" onclick="navLevel2()"><p>Виды – рекордсмены Байкала</p><span>></span></li>
-      </ul>
-      <ul class="menulevel2 nav hide" id="submenu3">
-        <li id="3-1" class="menuItemL2" onclick="navLevel2()"><p>Биота Байкала</p><span>></span></li>
-        <li id="3-2" class="menuItemL2" onclick="navLevel2()"><p>Разнообразие видов в Байкале</p><span>></span></li>
-        <li id="3-3" class="menuItemL2" onclick="navLevel2()"><p>Водоросли и фитопланктон</p><span>></span></li>
-        <li id="3-4" class="menuItemL2" onclick="navLevel2()"><p>Зоопланктон</p><span>></span></li>
-      </ul>
-      <ul class="menulevel2 nav hide" id="submenu4">
-        <li id="4-1" class="menuItemL2" onclick="navLevel2()"><p>Рельеф дна</p><span>></span></li>
-        <li id="4-2" class="menuItemL2" onclick="navLevel2()"><p>Донные организмы</p><span>></span></li>
-      </ul>
-      <ul class="menulevel2 nav hide" id="submenu5">
-        <li id="5-1" class="menuItemL2" onclick="navLevel2()"><p>Особенности накопления донных отложений</p><span>></span></li>
-        <li id="5-2" class="menuItemL2" onclick="navLevel2()"><p>Запасы газогидратов</p><span>></span></li>
-        <li id="5-3" class="menuItemL2" onclick="navLevel2()"><p>Сейсмоопасность территории</p><span>></span></li>
-      </ul>
+      <nav class="nav parent-1 level-2 show" id="submenu1">
+        <li id="1-1" class="menuItemL2 active" onclick="navLevel2()"><p>Общая информация о Байкале</p></li>
+        <li id="1-2" class="menuItemL2" onclick="navLevel2()"><p>Расположение Байкала</p></li>
+        <li id="1-3" class="menuItemL2" onclick="navLevel2()"><p>Особенности Байкала</p></li>
+        <li id="1-4" class="menuItemL2" onclick="navLevel2()"><p>Уникальность вод Байкала</p></li>
+        <li id="1-5" class="menuItemL2" onclick="navLevel2()"><p>Возраст Байкала</p></li>
+	  </nav>
+      <nav class="nav parent-2 level-2" id="submenu2">
+        <li id="2-1" class="menuItemL2" onclick="navLevel2()"><p>Разнообразие фауны, эндемики и виды-вселенцы</p></li>
+        <li id="2-2" class="menuItemL2" onclick="navLevel2()"><p>Виды – рекордсмены Байкала</p></li>
+	  </nav>
+      <nav class="nav parent-3 level-2" id="submenu3">
+        <li id="3-1" class="menuItemL2" onclick="navLevel2()"><p>Биота Байкала</p></li>
+        <li id="3-2" class="menuItemL2" onclick="navLevel2()"><p>Разнообразие видов в Байкале</p></li>
+        <li id="3-3" class="menuItemL2" onclick="navLevel2()"><p>Водоросли и фитопланктон</p></li>
+        <li id="3-4" class="menuItemL2" onclick="navLevel2()"><p>Зоопланктон</p></li>
+      </nav>
+      <nav class="nav parent-4 level-2" id="submenu4">
+        <li id="4-1" class="menuItemL2" onclick="navLevel2()"><p>Рельеф дна</p></li>
+        <li id="4-2" class="menuItemL2" onclick="navLevel2()"><p>Донные организмы</p></li>
+      </nav>
+      <nav class="nav parent-5 level-2" id="submenu5">
+        <li id="5-1" class="menuItemL2" onclick="navLevel2()"><p>Особенности накопления донных отложений</p></li>
+        <li id="5-2" class="menuItemL2" onclick="navLevel2()"><p>Запасы газогидратов</p></li>
+        <li id="5-3" class="menuItemL2" onclick="navLevel2()"><p>Сейсмоопасность территории</p></li>
+      </nav>
     </div>
     <div class="article-wrapper flex-row d-flex">
     	<div class="article container" id="Article-1">
@@ -172,5 +171,7 @@
     	</div>
     </div>
   </div>
+
+<script type="text/javascript" src="js/nav.js"></script>
 </body>
 </html>

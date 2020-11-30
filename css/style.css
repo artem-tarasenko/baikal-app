@@ -66,14 +66,21 @@ body {
   flex-direction: column;
 }
 
-ul.nav {
+.nav {
   list-style-type: none;
   display: flex;
   flex-flow: column;
-  width: 100%;
+  /* width: 100%; */
+  visibility: hidden;
+  position: absolute;
 }
 
-ul.nav li {
+.nav.show {
+	visibility: visible;
+	position: relative;
+}
+
+.nav li {
   text-transform: uppercase;
   padding: 20px 10px 20px 40px;
   display: flex;
@@ -84,12 +91,12 @@ ul.nav li {
   transition: padding 0.5s ease-in, background-color 0.3s ease-in, font-weight 0.1s ease-out;
 }
 
-ul.nav li p {
+.nav li p {
   margin: 0;
   pointer-events: none;
 }
 
-ul.nav li span {
+.nav li span {
   opacity: 0;
   transition: opacity 0.5s ease-out,  padding 0.2s ease-in;
   padding-right: 0;
@@ -99,14 +106,14 @@ ul.nav li span {
   font-size: 14px;
 }
 
-ul.nav li.active {
+.nav li.active {
   background-color: rgba(255, 255, 255, 0.2);
-  filter: drop-shadow(2px 2px 2px black);
+  /* filter: drop-shadow(2px 2px 2px black); */
   font-weight: bold;
-
+  border-bottom: 3px solid #fff;
 }
 
-ul.nav li.active span {
+.nav li.active span {
   opacity: 1;
   padding-right: 10px;
 }

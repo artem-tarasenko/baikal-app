@@ -1,74 +1,44 @@
-//navigation
-
-function showSubmenu1() {
-    document.getElementById('submenu1').className = "showSubnav";
-    document.getElementById('submenu2').className = "hideSubnav";
-    document.getElementById('submenu3').className = "hideSubnav";
-    document.getElementById('submenu4').className = "hideSubnav";
-    document.getElementById('submenu5').className = "hideSubnav";
-    //manage articles
-	document.getElementById('article-1').className = "show";
-    document.getElementById('article-2').className = "hide";
-    document.getElementById('article-3').className = "hide";
-    document.getElementById('article-4').className = "hide";
-    document.getElementById('article-5').className = "hide";
-  }
-
-  function showSubmenu2() {
-    document.getElementById('submenu1').className = "hideSubnav";
-    document.getElementById('submenu2').className = "showSubnav";
-    document.getElementById('submenu3').className = "hideSubnav";
-    document.getElementById('submenu4').className = "hideSubnav";
-    document.getElementById('submenu5').className = "hideSubnav";
-    //manage articles
-	document.getElementById('article-1').className = "hide";
-    document.getElementById('article-2').className = "show";
-    document.getElementById('article-3').className = "hide";
-    document.getElementById('article-4').className = "hide";
-    document.getElementById('article-5').className = "hide";
-  }
-
-  function showSubmenu3() {
-    document.getElementById('submenu1').className = "hideSubnav";
-    document.getElementById('submenu2').className = "hideSubnav";
-    document.getElementById('submenu3').className = "showSubnav";
-    document.getElementById('submenu4').className = "hideSubnav";
-    document.getElementById('submenu5').className = "hideSubnav";
-    //manage articles
-	document.getElementById('article-1').className = "hide";
-    document.getElementById('article-2').className = "hide";
-    document.getElementById('article-3').className = "show";
-    document.getElementById('article-4').className = "hide";
-    document.getElementById('article-5').className = "hide";
-  }
-
-  function showSubmenu4() {
-    document.getElementById('submenu1').className = "hideSubnav";
-    document.getElementById('submenu2').className = "hideSubnav";
-    document.getElementById('submenu3').className = "hideSubnav";
-    document.getElementById('submenu4').className = "showSubnav";
-    document.getElementById('submenu5').className = "hideSubnav";
-    //manage articles
-	document.getElementById('article-1').className = "hide";
-    document.getElementById('article-2').className = "hide";
-    document.getElementById('article-3').className = "hide";
-    document.getElementById('article-4').className = "show";
-    document.getElementById('article-5').className = "hide";
-  }
-
-  function showSubmenu5() {
-    document.getElementById('submenu1').className = "hideSubnav";
-    document.getElementById('submenu2').className = "hideSubnav";
-    document.getElementById('submenu3').className = "hideSubnav";
-    document.getElementById('submenu4').className = "hideSubnav";
-    document.getElementById('submenu5').className = "showSubnav";
-    //manage articles
-	document.getElementById('article-1').className = "hide";
-    document.getElementById('article-2').className = "hide";
-    document.getElementById('article-3').className = "hide";
-    document.getElementById('article-4').className = "hide";
-    document.getElementById('article-5').className = "show";
-  }
+var menuActiveId;
+var sumbenuActive;
 
 
-  
+
+function hideAllSubmenus() {
+	let allSubmenus = document.querySelectorAll(".level-2");
+	allSubmenus.forEach( item => item.classList.remove("show"));
+}
+
+function addListenerL1() {
+	let menuArray = document.querySelector("nav.level-1");
+	menuArray.addEventListener("click", function(event) {
+		if (event.target.classList.contains("itemLevel1")) {
+			menuActiveId = event.target.id;
+			//set this menu1 item as active
+			//save this menu 1 item to var for styling
+			//find menu2 array with class built from menu 1 id
+			//add show class to all items in array
+			//activate 1st items article
+			//save 1st m2 item into var for styling
+			//trigger add event listener l2
+			submenuActive = document.querySelector("nav.parent-" + event.target.id + ".level-2");
+			logging();
+		}
+	})
+}
+
+function addListenerL2() {
+
+}
+
+addListenerL1()
+//later
+//combine loading with add event listener for 1 and 2 levels with set param #1
+
+
+function logging() {
+	console.log("#######################");
+	console.log("menu active id / submenu active object");
+	console.log(menuActiveId);
+	console.log(submenuActive);
+	console.log("#######################");
+}
