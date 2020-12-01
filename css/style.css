@@ -119,11 +119,6 @@ body {
 }
 
 
-/*
-ul.nav li.active::after {
-  content: ">";
-}
-*/
 
 /* ============ CONTENT ============ */
 .content {
@@ -189,4 +184,8 @@ ul.nav li.active::after {
   padding: 20px 40px;
   text-align: center;
   pointer-events: none;
+}
+
+.bordered {
+  border-right: 1px solid white;
 }
