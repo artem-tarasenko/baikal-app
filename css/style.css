@@ -6,10 +6,6 @@ body {
   height: 100vh;
 }
 
-.sidebar {
-  flex: 0 0 350px;
-}
-
 .hide {
   display: none !important;
   transition: display 2s linear 0s;
@@ -17,32 +13,34 @@ body {
 
 /* ============ BG COLORS ============ */
 .header {
-  background-color: rgba(12, 26, 41, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .content-wrapper {
-  background-color: rgba(12, 26, 41, 0.5);
+  background-color: rgba(12, 26, 41, 0.0);
 }
 
 .menu.level-1 {
-  background-color: rgba(12, 26, 41, 0.6);
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
 .menu.level-2 {
-  background-color: rgba(12, 26, 41, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .article-wrapper {
-  background-color: rgba(12, 26, 41, 0.8);
+  background-color: rgba(0, 0, 0, 0.65);
 }
 
 .article-wrapper .gallery {
-  background-color: rgba(12, 26, 41, 0.9);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 /* ==================  HEADER  ================== */
 .header {
-  height: 20vh;
+  height: 22vh;
+  padding-left: 396px;
+  justify-content: space-between;
 }
 
 .logo {
@@ -51,8 +49,8 @@ body {
   display: flex;
 }
 
-.logo img {
-  width: 260px;
+.logo svg {
+  width: 120px;
 }
 
 .title {
@@ -60,62 +58,8 @@ body {
   align-items: center;
 }
 
-/* ============ SIDEBAR / MENUS ============ */
-.menulevel2, .showSubnav {
-  display: flex;
-  flex-direction: column;
-}
-
-.nav {
-  list-style-type: none;
-  display: flex;
-  flex-flow: column;
-  /* width: 100%; */
-  visibility: hidden;
-  position: absolute;
-}
-
-.nav.show {
-	visibility: visible;
-	position: relative;
-}
-
-.nav li {
-  text-transform: uppercase;
-  padding: 20px 10px 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: none;
-  font-weight: normal;
-  transition: padding 0.5s ease-in, background-color 0.3s ease-in, font-weight 0.1s ease-out;
-}
-
-.nav li p {
-  margin: 0;
-  pointer-events: none;
-}
-
-.nav li span {
-  opacity: 0;
-  transition: opacity 0.5s ease-out,  padding 0.2s ease-in;
-  padding-right: 0;
-}
-
-.menulevel2.nav {
-  font-size: 14px;
-}
-
-.nav li.active {
-  background-color: rgba(255, 255, 255, 0.2);
-  /* filter: drop-shadow(2px 2px 2px black); */
-  font-weight: bold;
-  border-bottom: 3px solid #fff;
-}
-
-.nav li.active span {
-  opacity: 1;
-  padding-right: 10px;
+.title h1 {
+	font-size: 44px;
 }
 
 
@@ -125,12 +69,21 @@ body {
   height: 80vh;
 }
 
-.level-1, .level-2 {
+/* .level-1, .level-2 {
   padding: 20px 0;
+} */
+.article p {
+	/* font-size: 14px; */
 }
-
 .article, .gallery {
-  padding: 20px;}
+  padding: 20px;
+}
+.article .container {
+	padding-left: 20px;
+}
+.article-wrapper {
+	border-left: 1px solid #00FF00;
+}
 
 .gallery {
   overflow-y: scroll;
@@ -141,6 +94,10 @@ body {
 
 
 /*  --- GALLERY --- */
+.sidebar.gallery {
+	flex: 0 0 416px;
+}
+
 .gallery {
   display: flex;
   flex-direction: column;
@@ -187,5 +144,80 @@ body {
 }
 
 .bordered {
-  border-right: 1px solid white;
+  border-right: 1px solid #00FF00;
+}
+
+
+
+/* ============ SIDEBAR / MENUS ============ */
+.menulevel2, .showSubnav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+	flex: 0 0 396px;
+}
+
+.sidebar.level-2 {
+	flex: 0 0 376px;
+}
+
+.nav {
+  list-style-type: none;
+  display: flex;
+  flex-flow: column;
+  /* width: 100%; */
+  visibility: hidden;
+  position: absolute;
+}
+
+.nav.show {
+	visibility: visible;
+	position: relative;
+}
+
+.nav li {
+  text-transform: uppercase;
+  height: 83px;
+  max-height: 83px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: none;
+  font-weight: normal;
+  transition: padding 0.5s ease-in, background-color 0.3s ease-in, font-weight 0.1s ease-out;
+}
+
+.nav li p {
+  margin: 0;
+  pointer-events: none;
+  padding: 20px 10px 20px 40px;
+  font-size: 20px;
+}
+
+.nav li span {
+  opacity: 0;
+  transition: opacity 0.5s ease-out,  padding 0.2s ease-in;
+  padding-right: 0;
+}
+
+.menulevel2.nav {
+  font-size: 14px;
+}
+
+.nav li.active {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid #00FF00;
+  color: #00FF00;
+}
+
+.nav li.active.shadow {
+  box-shadow: 0px 3px 0px #00FF00;
+  border-bottom: 0;
+}
+
+.nav li.active span {
+  opacity: 1;
+  padding-right: 10px;
 }
