@@ -1,2 +1,0 @@
-1. JS triggering another function + selecting by class and running through resulting massive to do smth
-https://jsfiddle.net/pixe1/zvh7qn53/

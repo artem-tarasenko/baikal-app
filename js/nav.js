@@ -77,6 +77,7 @@ function showArticle(menu, submenu) {
 	let artGroup = document.querySelector("#Article-" + menu);
 	let artSingle = document.querySelector("#Article-" + submenu);
 	let allArticles = document.querySelectorAll(".article");
+	
 
 	//managing hide class
 	allArticles.forEach( item => item.classList.add("hide"));
