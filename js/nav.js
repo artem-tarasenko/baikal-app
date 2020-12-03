@@ -1,9 +1,18 @@
 (function(window, document, undefined) {
-	var mainMenu = document.querySelector("nav.level-1"); //object
+	var mainFirstLevel = document.querySelector("nav.level-1"); //object
 	var mainMenuArray = document.querySelectorAll(".itemLevel1"); //menu array
 	var submenuArray = document.querySelectorAll("nav.level-2"); //array of objects
 	var menuActiveItem = mainMenuArray[0]; //html object, menu li item, with default #1
+	var mainMenu = document.querySelector("#main-nav");
 	var submenuActive;
+
+// =================================================================
+
+function handleMainMenuClicks(e) {
+	console.log(e.target.id);
+}
+
+// =================================================================
 
 function handleMenuClicks(e) {
 	//save this menu 1 item to var for styling
@@ -31,6 +40,7 @@ function handleMenuClicks(e) {
 	showArticle(menuActiveItem.id, menuActiveItem.id + "-1");
 }
 
+// =================================================================
 
 function handleSubmenuClicks(e) {
 	submenuActive = e.target;
@@ -52,6 +62,7 @@ function handleSubmenuClicks(e) {
 	showArticle(menuActiveItem.id, submenuActive.id);
 }
 
+// =================================================================
 
 function menuStyling(submenuLevel){ //where x passed submenu level
 
@@ -72,37 +83,35 @@ function menuStyling(submenuLevel){ //where x passed submenu level
 		console.log("MenuStyling(): Items are equal, idle...");
 	}
 }
+// =================================================================
+/**/	function showArticle(menu, submenu) {
+/**/		let artGroup = document.querySelector("#Article-" + menu);
+/**/		let artSingle = document.querySelector("#Article-" + submenu);
+/**/		let allArticles = document.querySelectorAll(".article");
+/**/
+/**/		//managing hide class
+/**/		allArticles.forEach( item => item.classList.add("hide"));
+/**/		artGroup.classList.remove("hide");
+/**/		artSingle.classList.remove("hide");
+/**/	}
+/**/
+/**/	function deactivateItems(level) {
+/**/		let allMenuItems = document.querySelectorAll(".itemLevel" + level); //recieving 1 or 2
+/**/		allMenuItems.forEach( item => item.classList.remove("active", "shadow"));
+/**/	}
+/**/	function hideAllSubmenus() {
+/**/		let allSubmenus = document.querySelectorAll(".level-2");
+/**/		allSubmenus.forEach( item => item.classList.remove("show"));
+/**/	}
+// =================================================================
 
-function showArticle(menu, submenu) {
-	let artGroup = document.querySelector("#Article-" + menu);
-	let artSingle = document.querySelector("#Article-" + submenu);
-	let allArticles = document.querySelectorAll(".article");
-	
-
-	//managing hide class
-	allArticles.forEach( item => item.classList.add("hide"));
-	artGroup.classList.remove("hide");
-	artSingle.classList.remove("hide");
-}
-
-function deactivateItems(level) {
-	let allMenuItems = document.querySelectorAll(".itemLevel" + level); //recieving 1 or 2
-	allMenuItems.forEach( item => item.classList.remove("active", "shadow"));
-}
-function hideAllSubmenus() {
-	let allSubmenus = document.querySelectorAll(".level-2");
-	allSubmenus.forEach( item => item.classList.remove("show"));
-}
 
 
-//later
-//combine loading with add event listener for 1 and 2 levels with set param #1
-
-//Add listeners to menu blocks
-mainMenu.addEventListener("click", handleMenuClicks);
+//Add listeners to menu blocks, if they exist on the page
+mainFirstLevel && mainFirstLevel.addEventListener("click", handleMenuClicks);
 	console.log("AddListener(): Menu listeners are added...");
-
-submenuArray.forEach( item => item.addEventListener("click", handleSubmenuClicks));
+submenuArray && submenuArray.forEach( item => item.addEventListener("click", handleSubmenuClicks));
 	console.log("AddListener(): Submenu listeners are added...");
-
+mainMenu && mainMenu.addEventListener("click", handleMainMenuClicks);
+	console.log("AddListener(): Main menu listeners are added...");
 })(window, document);

@@ -1,9 +1,14 @@
+:root {
+	font-family: "Glober", sans-serif;
+}
+
 body {
   color: white;
   background-color: #0c1a29;
   background-image: url(../images/bg.jpg);
   background-size: cover;
   height: 100vh;
+  font-family: "Glober";
 }
 
 ::-webkit-scrollbar {
@@ -30,6 +35,13 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+.main-page .header {
+	padding: 0;
+	background-color: transparent;
+}
+.main-page .header h1 {
+	font-size: 90px;
+}
 .content-wrapper {
   background-color: rgba(12, 26, 41, 0.0);
 }
@@ -86,6 +98,15 @@ background-repeat: no-repeat;
   width: 120px;
 }
 
+.logo p {
+	font-size: 27px;
+}
+
+.logo.text {
+    padding: 0 80px;
+    max-width: 492px;
+    text-align: center;
+}
 .title {
   display: flex;
   align-items: center;
@@ -166,13 +187,17 @@ background-repeat: no-repeat;
 }
 
 /* ================= MAIN MENU =================== */
-
+.height-100 {
+	height: 100%;
+}
 .main-menu {
-  background-color: rgba(12, 26, 41, 0.5);
   justify-content: center;
+  width: 1068px;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: 0 auto;
 }
 .main-nav {
-  align-self: center;
+  align-self: start;
   width: 500px;
   list-style: none;
   text-transform: uppercase;
@@ -180,7 +205,10 @@ background-repeat: no-repeat;
 }
 .main-nav li {
   padding: 20px 40px;
-  text-align: center;
+  text-align: left;
+}
+.main-nav li a {
+    color: white;
 }
 .bordered {
   border-right: 1px solid #00FF00;
