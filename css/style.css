@@ -202,6 +202,7 @@ background-repeat: no-repeat;
   list-style: none;
   text-transform: uppercase;
   font-size: 30px;
+  padding-left: 40px;
 }
 .main-nav li {
   padding: 20px 40px;

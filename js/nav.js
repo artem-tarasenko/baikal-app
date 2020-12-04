@@ -1,15 +1,23 @@
 (function(window, document, undefined) {
-	var mainFirstLevel = document.querySelector("nav.level-1"); //object
-	var mainMenuArray = document.querySelectorAll(".itemLevel1"); //menu array
+	var mainMenuArray = document.querySelectorAll(".itemLevel1"); //NODE LIST
 	var submenuArray = document.querySelectorAll("nav.level-2"); //array of objects
 	var menuActiveItem = mainMenuArray[0]; //html object, menu li item, with default #1
 	var mainMenu = document.querySelector("#main-nav");
 	var submenuActive;
 
 // =================================================================
+// =================================================================
+//make a link with hash to redirect to internal page
+// with a certain menu active
 
+function redirectToMenuItem(hashLink) {
+	let link = "./content.html#" + hashLink;
+	console.log(link);
+	window.location.replace(link);
+}
 function handleMainMenuClicks(e) {
-	console.log(e.target.id);
+	let targetId = e.target.id;
+	redirectToMenuItem(targetId)
 }
 
 // =================================================================
@@ -108,10 +116,23 @@ function menuStyling(submenuLevel){ //where x passed submenu level
 
 
 //Add listeners to menu blocks, if they exist on the page
-mainFirstLevel && mainFirstLevel.addEventListener("click", handleMenuClicks);
+mainMenuArray && mainMenuArray.forEach( item => item.addEventListener("click", handleMenuClicks));
 	console.log("AddListener(): Menu listeners are added...");
 submenuArray && submenuArray.forEach( item => item.addEventListener("click", handleSubmenuClicks));
 	console.log("AddListener(): Submenu listeners are added...");
 mainMenu && mainMenu.addEventListener("click", handleMainMenuClicks);
 	console.log("AddListener(): Main menu listeners are added...");
+
+
+
+//read URL to load internal active menu by emulating click event
+	if (mainMenuArray.length > 0) {
+		const event = new Event("click");
+		const parsedUrl = new URL(window.location.href).hash;
+		const redirectedMenu = [...mainMenuArray];
+
+		let targetMenuItem = redirectedMenu.find(item => "#" + item.id === parsedUrl);
+		targetMenuItem.dispatchEvent(event);
+	}
+
 })(window, document);
